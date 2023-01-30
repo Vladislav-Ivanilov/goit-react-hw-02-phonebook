@@ -8,7 +8,7 @@ const nanoid = customAlphabet('1234567890', 3);
 
 const schema = Yup.object().shape({
   name: Yup.string().min(2).max(70).required(),
-  number: Yup.number().min(4).required(),
+  number: Yup.string().min(4).required(),
 });
 
 const initialValues = {

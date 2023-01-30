@@ -18,7 +18,9 @@ class PhoneBook extends Component {
 
   handlerSubmit = data => {
     this.setState(({ contacts }) =>
-      contacts.find(contact => contact.name === data.name)
+      contacts.find(
+        contact => contact.name.toLowerCase() === data.name.toLowerCase()
+      )
         ? alert(`${data.name} is already in contacts`)
         : { contacts: [data, ...contacts] }
     );
